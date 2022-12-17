@@ -9,3 +9,5 @@ export const LazyLayout = () =>{
         </div>
     )
 }
+
+export default LazyLayout
