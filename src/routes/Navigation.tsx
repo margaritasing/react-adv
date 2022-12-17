@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,9 +10,11 @@ import {
 import { routes } from '../lazyload/router/routes';
 import logo from '../logo.svg';
 
+
 export const Navigation = () => {
   return (
-    <Router>
+    <Suspense fallback={<span>Loading....</span>}>
+      <Router>
       <div className="main-layout">
         <nav>
             <img src={ logo } alt="React Logo" />
@@ -41,6 +44,7 @@ export const Navigation = () => {
           </Routes>
           
       </div>
-    </Router>
+    </Router>      
+    </Suspense>
   );
 }
